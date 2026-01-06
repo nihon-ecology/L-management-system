@@ -1,11 +1,9 @@
-<% /* GTMタグ（bodyセクション用）テンプレート 使い方: <%- include('../../partials/body-tags', { agency, isTestMode }) %>
-    */ -%>
-    <% if (!isTestMode && agency.tracking.gtm.enabled) { -%>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= agency.tracking.gtm.id %>" height="0"
-                width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <% } -%>
-            <% if (isTestMode) { -%>
-                <!-- TEST MODE: GTM無効化 -->
-                <% } -%>
+<% if (!isTestMode && agency.tracking.gtm.enabled) { -%>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= agency.tracking.gtm.id %>" height="0"
+            width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <% } -%>
+        <% if (isTestMode) { -%>
+            <!-- TEST MODE: GTM無効化 -->
+            <% } -%>
