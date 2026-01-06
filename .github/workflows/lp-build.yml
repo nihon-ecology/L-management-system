@@ -5,11 +5,7 @@ on:
     branches:
       - main
       - develop
-    paths:
-      - 'LP/src/**'
-      - 'LP/config/**'
-      - 'LP/scripts/**'
-      - 'LP/package.json'
+  # pathsの設定を削除しました（デプロイを確実に動かすため）
 env:
   NODE_VERSION: '20'
 jobs:
@@ -23,10 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          # cacheの設定を削除しました（エラー回避のため）
       - name: Install dependencies
         working-directory: ./LP
-        run: npm install  # npm ci から npm install に変更しました
+        run: npm install
       - name: Build LP (Production)
         if: github.ref == 'refs/heads/main'
         working-directory: ./LP
