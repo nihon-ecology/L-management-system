@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type='text/javascript' src='https://js.crossees.com/csslp.js' async></script>
+  </head>
+  <body>
+    <main>
+      <div><img src="./img/fv.webp" /></div>
+      <div><img src="./img/important.webp" /></div>
+      <div><img src="./img/maker.webp" /></div>
+      <div><img src="./img/point.webp" /></div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/battery_close.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/battery_open.webp" />
+        </div>
+      </div>
+      <div><img src="./img/reason.webp" /></div>
+      <div><img src="./img/anxiety.webp" /></div>
+      <div><img src="./img/safety.webp" /></div>
+      <div><img src="./img/about.webp" /></div>
+      <div><img src="./img/flow.webp" /></div>
+      <div><img src="./img/faq/faq.webp" /></div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q1_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q1_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q1_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q2_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q2_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q2_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q3_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q3_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q3_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q4_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q4_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q4_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q5_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q5_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q5_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q6_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q6_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q6_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q7_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q7_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q7_answer.webp" />
+        </div>
+      </div>
+      <div>
+        <div class="close pointer">
+          <img src="./img/faq/q8_plus.webp" />
+        </div>
+        <div class="open pointer" style="display: none">
+          <img src="./img/faq/q8_minus.webp" />
+        </div>
+        <div class="open" style="display: none">
+          <img src="./img/faq/q8_answer.webp" />
+        </div>
+      </div>
+      <div><img src="./img/margin.webp" /></div>
+      <div id="form">
+        <script src="https://sdk.form.run/js/v2/embed.js"></script>
+        <div
+           class="formrun-embed"
+           data-formrun-form="@eco-digitalstrategy-s8gIhq56GXs2iMW6cimA?_field_17=ロンバード&_field_18=Listing&_field_19=Google&_field_20=L5_Ihp_2407_Tokyo_Subs_Long"
+           data-formrun-redirect="true">
+        </div>
+      </div>
+      <div><img src="./img/company.webp" /></div>
+      <div class="floating">
+        <a href="#form"
+          ><img src="./img/floating_button.webp"
+        /></a>
+      </div>
+    </main>
+    <script>
+      function openclose(e) {
+        var target = e.currentTarget;
+        var parent = target.parentNode;
+        var closeClass = target.classList.contains("open") ? "open" : "close";
+        var openClass = target.classList.contains("open") ? "close" : "open";
+        var elems = parent.getElementsByClassName(closeClass);
+        for (var i = 0; i < elems.length; i++) {
+          elems[i].style.display = "none";
+        }
+        elems = parent.getElementsByClassName(openClass);
+        for (var i = 0; i < elems.length; i++) {
+          elems[i].style.display = "block";
+        }
+      }
+      var elems = document.getElementsByClassName("pointer");
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].addEventListener("click", openclose);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+{
+    "agencies": {
+        "A8": {
+            "id": "A8",
+            "name": "A8",
+            "tracking": {
+                "metaPixel": {
+                    "enabled": true,
+                    "id": "1084061196949406"
+                },
+                "googleAds": {
+                    "enabled": false,
+                    "id": null
+                },
+                "yahooAds": {
+                    "enabled": false
+                },
+                "crossees": {
+                    "enabled": false
+                },
+                "gtm": {
+                    "enabled": true,
+                    "id": "GTM-P85D7GZT"
+                }
+            },
+            "formrun": {
+                "formId": "@caramel-copy",
+                "fields": {
+                    "_field_19": "A8",
+                    "_field_20": "Display",
+                    "_field_21": "Meta",
+                    "_field_26": "A1_Ihp_2407_Tokyo_Subs_Long"
+                }
+            },
+            "line": {
+                "liffUrl": "https://liff.line.me/2005587275-1gewVwoG/landing?follow=%40929mxivx&lp=klQfjK&liff_id=2005587275-1gewVwoG"
+            }
+        },
+        "ONE": {
+            "id": "ONE",
+            "name": "ONE",
+            "tracking": {
+                "metaPixel": {
+                    "enabled": true,
+                    "id": "1494083678271836"
+                },
+                "googleAds": {
+                    "enabled": true,
+                    "id": "AW-17505760705"
+                },
+                "yahooAds": {
+                    "enabled": true
+                },
+                "crossees": {
+                    "enabled": false
+                },
+                "gtm": {
+                    "enabled": true,
+                    "id": "GTM-XXXXXX"
+                }
+            },
+            "formrun": {
+                "formId": "@eco-digitalstrategy-TpoHy6HpsBOZ1m3X8oCN",
+                "fields": {
+                    "_field_16": "ONE",
+                    "_field_17": "Listing",
+                    "_field_18": "Google・Yahoo!",
+                    "_field_19": "Li_Ihp_2407_Tokyo_Subs"
+                }
+            },
+            "line": {
+                "liffUrl": null
+            }
+        },
+        "ロンバード": {
+            "id": "lombard",
+            "name": "ロンバード",
+            "tracking": {
+                "metaPixel": {
+                    "enabled": false,
+                    "id": null
+                },
+                "googleAds": {
+                    "enabled": false,
+                    "id": null
+                },
+                "yahooAds": {
+                    "enabled": false
+                },
+                "crossees": {
+                    "enabled": true
+                },
+                "gtm": {
+                    "enabled": false,
+                    "id": null
+                }
+            },
+            "formrun": {
+                "formId": "@eco-digitalstrategy-s8gIhq56GXs2iMW6cimA",
+                "fields": {
+                    "_field_17": "ロンバード",
+                    "_field_18": "Listing",
+                    "_field_19": "Google",
+                    "_field_20": "L4_Ihp_2407_Tokyo_Subs_Long"
+                }
+            },
+            "line": {
+                "liffUrl": null
+            }
+        }
+    },
+    "testMode": {
+        "tracking": {
+            "metaPixel": {
+                "enabled": false,
+                "id": "TEST_MODE_DISABLED"
+            },
+            "googleAds": {
+                "enabled": false,
+                "id": "TEST_MODE_DISABLED"
+            },
+            "yahooAds": {
+                "enabled": false
+            },
+            "crossees": {
+                "enabled": false
+            },
+            "gtm": {
+                "enabled": false,
+                "id": "TEST_MODE_DISABLED"
+            }
+        }
+    }
+}

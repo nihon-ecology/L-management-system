@@ -1,0 +1,54 @@
+<%# ========================================
+    計測タグ（headセクション用）テンプレート
+    使い方: <%- include('partials/head-tags', { agency, isTestMode }) %>
+======================================== -%>
+<% if (!isTestMode && agency.tracking.metaPixel.enabled) { -%>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '<%= agency.tracking.metaPixel.id %>');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=<%= agency.tracking.metaPixel.id %>&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<% } -%>
+
+<% if (!isTestMode && agency.tracking.googleAds.enabled) { -%>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= agency.tracking.googleAds.id %>"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '<%= agency.tracking.googleAds.id %>');
+</script>
+<% } -%>
+
+<% if (!isTestMode && agency.tracking.yahooAds.enabled) { -%>
+<!-- Yahoo Ads -->
+<script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+<script>
+window.yjDataLayer = window.yjDataLayer || [];
+function ytag() { yjDataLayer.push(arguments); }
+ytag({"type":"ycl_cookie", "config":{"ycl_use_non_cookie_storage":true}});
+</script>
+<% } -%>
+
+<% if (!isTestMode && agency.tracking.crossees.enabled) { -%>
+<!-- Crossees -->
+<script type='text/javascript' src='https://js.crossees.com/csslp.js' async></script>
+<% } -%>
+
+<% if (isTestMode) { -%>
+<!-- TEST MODE: 計測タグ無効化 -->
+<!-- All tracking scripts are disabled for testing -->
+<% } -%>

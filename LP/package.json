@@ -1,0 +1,28 @@
+{
+  "name": "lp-builder",
+  "version": "1.0.0",
+  "description": "LP Build System - 代理店別計測タグ自動挿入によるLP生成",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:prod": "cross-env BUILD_ENV=production node scripts/build.js",
+    "build:test": "cross-env BUILD_ENV=test node scripts/build.js",
+    "build:lp": "node scripts/build.js --lp",
+    "build:agency": "node scripts/build.js --agency",
+    "clean": "rimraf dist",
+    "watch": "node scripts/build.js --watch",
+    "validate": "node scripts/validate-config.js"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "ejs": "^3.1.10",
+    "rimraf": "^5.0.5",
+    "chokidar": "^3.5.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

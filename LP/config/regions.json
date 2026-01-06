@@ -1,0 +1,16 @@
+{
+    "regions": {
+        "tokyo": {
+            "id": "tokyo",
+            "name": "東京",
+            "phone": "0120-766-925",
+            "phoneRaw": "0120766925"
+        },
+        "chiho": {
+            "id": "chiho",
+            "name": "地方",
+            "phone": "0120-766-925",
+            "phoneRaw": "0120766925"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<%#========================================formrun埋め込みテンプレート 使い方: <%- include('partials/form', { agency }) %>
+    ======================================== -%>
+    <div id="form">
+        <script src="https://sdk.form.run/js/v2/embed.js"></script>
+        <div class="formrun-embed"
+            data-formrun-form="<%= agency.formrun.formId %>?<%= Object.entries(agency.formrun.fields).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&') %>"
+            data-formrun-redirect="true">
+        </div>
+    </div>

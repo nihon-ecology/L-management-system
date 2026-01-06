@@ -1,0 +1,24 @@
+# 環境変数・シークレット
+.env
+.env.local
+.env.*.local
+
+# 依存関係
+node_modules/
+
+# ビルド成果物
+dist/
+
+# エディタ設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# ログ
+*.log
+npm-debug.log*

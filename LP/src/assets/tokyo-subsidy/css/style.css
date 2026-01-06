@@ -1,0 +1,50 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:700,400");
+:root {
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #232323;
+}
+body {
+  width: 750px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+}
+@media screen and (max-width: 750px) {
+  body {
+    width: 100%;
+  }
+}
+img,
+video {
+  width: 100%;
+}
+
+.sp {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .sp {
+    display: inline;
+  }
+}
+
+.floating {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 260px;
+}
+@media screen and (max-width: 750px) {
+  .floating {
+    width: 130px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+{
+    "lpTypes": {
+        "tokyo-subsidy": {
+            "id": "tokyo-subsidy",
+            "name": "東京都補助金LP",
+            "templateDir": "tokyo-subsidy",
+            "patterns": [
+                "lpa1",
+                "lpa8"
+            ],
+            "regions": [
+                "tokyo"
+            ],
+            "agencies": [
+                "A8",
+                "ONE",
+                "ロンバード"
+            ],
+            "hasThankPage": true
+        }
+    }
+}
