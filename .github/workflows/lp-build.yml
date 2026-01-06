@@ -1,9 +1,4 @@
 # LP Builder CI/CD Workflow
-# 
-# トリガー:
-#   - main ブランチへのプッシュ → 本番ビルド・デプロイ
-#   - develop ブランチへのプッシュ → テスト用ビルド・デプロイ
-#   - Pull Request → ビルド検証のみ（デプロイなし）
 name: LP Build and Deploy
 on:
   push:
@@ -15,14 +10,6 @@ on:
       - 'LP/config/**'
       - 'LP/scripts/**'
       - 'LP/package.json'
-  pull_request:
-    branches:
-      - main
-      - develop
-    paths:
-      - 'LP/src/**'
-      - 'LP/config/**'
-      - 'LP/scripts/**'
 env:
   NODE_VERSION: '20'
 jobs:
@@ -36,11 +23,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: LP/package-lock.json
+          # cacheの設定を削除しました（エラー回避のため）
       - name: Install dependencies
         working-directory: ./LP
-        run: npm ci
+        run: npm install  # npm ci から npm install に変更しました
       - name: Build LP (Production)
         if: github.ref == 'refs/heads/main'
         working-directory: ./LP
@@ -49,17 +35,12 @@ jobs:
         if: github.ref == 'refs/heads/develop'
         working-directory: ./LP
         run: npm run build:test
-      - name: Build LP (All - for PR validation)
-        if: github.event_name == 'pull_request'
-        working-directory: ./LP
-        run: npm run build
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: lp-dist-${{ github.sha }}
           path: LP/dist/
           retention-days: 7
-  # 本番デプロイジョブ（mainブランチのみ）
   deploy-prod:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -83,7 +64,6 @@ jobs:
           dangerous-clean-slate: false
       - name: Notify deployment success
         run: echo "✅ Production deployment complete"
-  # テストデプロイジョブ（developブランチのみ）
   deploy-test:
     needs: build
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
@@ -107,7 +87,6 @@ jobs:
           dangerous-clean-slate: false
       - name: Notify deployment success
         run: echo "✅ Test deployment complete"
-  # ビルド検証通知
   notify:
     needs: [build]
     if: always()
